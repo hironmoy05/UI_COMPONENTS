@@ -3,18 +3,23 @@ import { SafeAreaView, Platform, View } from 'react-native';
 
 // components
 import { AppInput } from './src/components';
+import { AppProvider } from './src/store/themeContext';
 
 const App = () => {
 
   return (
-    <View style={ { flex: 1, alignItems: 'center', justifyContent: 'center' } }>
-      {
-        Platform.OS === 'ios' ? <SafeAreaView></SafeAreaView> : null
-      }
-      <AppInput
-        name='Name'
-      />
-    </View>
+    <AppProvider>
+      <View style={ { flex: 1, alignItems: 'center', justifyContent: 'center' } }>
+        {
+          Platform.OS === 'ios' ? <SafeAreaView></SafeAreaView> : null
+        }
+        <AppInput
+          name='Name'
+          keyboardType='default'
+          keyboardAppearance='dark'
+        />
+      </View>
+    </AppProvider>
   );
 };
 

@@ -1,4 +1,5 @@
 import React  from 'react';
+import { ColorValue, TextInputProps } from 'react-native';
 
 export type AppInputTypes = {
     name: string;
@@ -8,4 +9,12 @@ export type AppInputTypes = {
 export type AppTextTypes = {
     children: React.ReactNode;
     textStyle?: {}
+}
+
+export interface AppTextInputProps extends TextInputProps {
+    color?: ColorValue
+}
+
+export type ColorType = {
+    [key: string]: string,
 }
