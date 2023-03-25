@@ -5,9 +5,14 @@ import { StyleSheet, Text } from 'react-native';
 import { moderateScale } from '../../config/responsiveSize';
 import { AppTextTypes } from '../..//config/types';
 
-const AppText: React.FC<AppTextTypes> = ({ children, textStyle }) => {
+const AppText: React.FC<AppTextTypes> = ({ children, textStyle, ...otherProps }) => {
     return (
-        <Text style={ [styles.text, textStyle] }>{ children }</Text>
+        <Text
+            style={ [styles.text, textStyle] }
+            { ...otherProps }
+        >
+            { children }
+        </Text>
     );
 };
 

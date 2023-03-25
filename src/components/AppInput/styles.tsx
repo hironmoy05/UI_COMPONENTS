@@ -11,7 +11,13 @@ const styles = StyleSheet.create({
         borderColor: '#222',
         paddingVertical: Platform.OS === 'ios' ? moderateScaleVertical(16) : null,
         paddingHorizontal: moderateScale(15),
-    }
+    },
+    iconContainer: {
+        position: 'absolute',
+        top: moderateScaleVertical(10),
+        right: moderateScale(10),
+        bottom: 0,
+    },
 });
 
 export default styles;

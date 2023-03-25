@@ -3,7 +3,8 @@ import { ColorValue, TextInputProps } from 'react-native';
 
 export type AppInputTypes = {
     name: string;
-    textStyle?: {}
+    textStyle?: {},
+    icon?: boolean
 }
 
 export type AppTextTypes = {
@@ -12,7 +13,7 @@ export type AppTextTypes = {
 }
 
 export interface AppTextInputProps extends TextInputProps {
-    color?: ColorValue
+    color?: ColorValue,
 }
 
 export type ColorType = {

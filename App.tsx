@@ -1,23 +1,19 @@
 import React from 'react';
-import { SafeAreaView, Platform, View } from 'react-native';
+import { Platform, SafeAreaView, View } from 'react-native';
 
 // components
-import { AppInput } from './src/components';
+import { ComponentsScreen } from './src/screens';
 import { AppProvider } from './src/store/themeContext';
 
 const App = () => {
 
   return (
     <AppProvider>
-      <View style={ { flex: 1, alignItems: 'center', justifyContent: 'center' } }>
+      <View style={ { flex: 1 } }>
         {
           Platform.OS === 'ios' ? <SafeAreaView></SafeAreaView> : null
         }
-        <AppInput
-          name='Name'
-          keyboardType='default'
-          keyboardAppearance='dark'
-        />
+        <ComponentsScreen />
       </View>
     </AppProvider>
   );
