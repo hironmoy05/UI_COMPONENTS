@@ -4,7 +4,8 @@ import { ColorValue, TextInputProps } from 'react-native';
 export type AppInputTypes = {
     name: string;
     textStyle?: {},
-    icon?: boolean
+    icon?: boolean,
+    icons?: boolean
 }
 
 export type AppTextTypes = {

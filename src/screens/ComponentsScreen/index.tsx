@@ -10,6 +10,11 @@ const ComponentsScreen: React.FC = () => {
     return (
         <>
             <AppInput
+                name='Password'
+                keyboardType='default'
+                icons
+            />
+            <AppInput
                 name='Name'
                 keyboardType='default'
                 icon

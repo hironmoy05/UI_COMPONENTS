@@ -4,6 +4,10 @@ import { moderateScale, moderateScaleVertical } from '../../config/responsiveSiz
 const styles = StyleSheet.create({
     container: {
         width: '100%',
+        marginVertical: moderateScaleVertical(5),
+    },
+    inputLabel: {
+        marginBottom: moderateScaleVertical(2),
     },
     input: {
         borderWidth: 1,
