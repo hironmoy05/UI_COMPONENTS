@@ -5,7 +5,8 @@ export type AppInputTypes = {
     name: string;
     textStyle?: {},
     icon?: boolean,
-    icons?: boolean
+    icons?: boolean,
+    success?: boolean
 }
 
 export type AppTextTypes = {

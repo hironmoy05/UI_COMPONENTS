@@ -2,13 +2,19 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 // components
-import { AppInput } from '../../components';
+import { AppButton, AppInput, AppText } from '../../components';
 // config
 import { moderateScale } from '../../config/responsiveSize';
 
 const ComponentsScreen: React.FC = () => {
     return (
         <>
+            <AppText>Buttons</AppText>
+            <AppButton />
+            <AppInput
+                name='Email'
+                success
+            />
             <AppInput
                 name='Password'
                 keyboardType='default'

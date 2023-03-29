@@ -22,6 +22,10 @@ const styles = StyleSheet.create({
         right: moderateScale(10),
         bottom: 0,
     },
+    placeholderText: {
+        position: 'absolute',
+        left: moderateScale(45),
+    }
 });
 
 export default styles;

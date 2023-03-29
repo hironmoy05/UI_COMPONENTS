@@ -21,7 +21,7 @@ const defaultValues = {
 const AppContext = createContext<DefaultValuesTypes>(defaultValues);
 
 export const AppProvider: React.FC<AppProviderTypes> = ({ children }) => {
-    const [theme, setTheme] = useState({ mode: 'light' });
+    const [theme, setTheme] = useState({ mode: 'dark' });
 
     const updateTheme = (data: {}) => {
         setTheme(theme => ({ ...theme, ...data }));

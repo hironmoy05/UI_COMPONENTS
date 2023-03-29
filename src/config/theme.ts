@@ -11,6 +11,7 @@ export const colors: {[key: string]: ColorType}  = {
         bgColor: '#FFFFFF',
         
         backgroundColor: '#DADEF2',
+        iconColor: '#141A33',
     },
     dark: {
         primaryColor: '#73E6CB',
@@ -22,7 +23,7 @@ export const colors: {[key: string]: ColorType}  = {
         bgColor: '#353B39',
         
         backgroundColor: '#222625',
-
+        iconColor: '#141A33',
     }
 
 }
