@@ -63,7 +63,7 @@ const AppInput: React.FC<AppTextInputProps & AppInputTypes> = ({ icon, icons, su
                                 ...styles.input,
                                 borderWidth: 2,
                                 paddingRight: moderateScale(50),
-                                borderColor: currentTheme.primaryColor
+                                borderColor: inputText.length >= 5 ? currentTheme.primaryColor : currentTheme.iconColor
                             } }
                             color={ currentTheme.iconColor }
                             placeholder={ name }
@@ -76,7 +76,7 @@ const AppInput: React.FC<AppTextInputProps & AppInputTypes> = ({ icon, icons, su
                             onPress={ () => setIsSuccess(!isSuccess) }
                         >
                             {
-                                inputText ?
+                                inputText.length >= 5 ?
                                     <AntIcon name='check' size={ moderateScale(25) } color={ currentTheme.primaryColor } />
                                     :
                                     <AntIcon name='close' size={ moderateScale(25) } color={ currentTheme.iconColor } />
@@ -136,12 +136,17 @@ const AppInput: React.FC<AppTextInputProps & AppInputTypes> = ({ icon, icons, su
         return (
             <>
                 <View style={ styles.container }>
-                    <AppText textStyle={ { ...styles.inputLabel, ...textStyle } }>{ name }</AppText>
+                    <AppText textStyle={ { ...styles.inputLabel, ...textStyle, color: currentTheme.tertiaryColor } }>{ name }</AppText>
                     <View>
                         <TextInput
-                            style={ { ...styles.input, paddingRight: moderateScale(50) } }
-                            color={ currentTheme.iconColor }
+                            style={ {
+                                ...styles.input,
+                                paddingRight: moderateScale(50),
+                                borderColor: currentTheme.borderColor
+                            } }
+                            color={ currentTheme.tertiaryColor }
                             placeholder={ name }
+                            placeholderTextColor={ currentTheme.tertiaryColor }
                             secureTextEntry={ isSecure }
                             { ...otherProps }
                         />
@@ -151,9 +156,9 @@ const AppInput: React.FC<AppTextInputProps & AppInputTypes> = ({ icon, icons, su
                         >
                             {
                                 isSecure ?
-                                    <Icon name='eye-off' size={ moderateScale(25) } color={ currentTheme.iconColor } />
+                                    <Icon name='eye-off' size={ moderateScale(25) } color={ currentTheme.tertiaryColor } />
                                     :
-                                    <Icon name='eye' size={ moderateScale(25) } color={ currentTheme.iconColor } />
+                                    <Icon name='eye' size={ moderateScale(25) } color={ currentTheme.tertiaryColor } />
                             }
                         </AppText>
                     </View>
@@ -164,10 +169,16 @@ const AppInput: React.FC<AppTextInputProps & AppInputTypes> = ({ icon, icons, su
 
     return (
         <View style={ styles.container }>
-            <AppText textStyle={ { ...styles.inputLabel, ...textStyle } }>{ name }</AppText>
+            <AppText textStyle={ {
+                ...styles.inputLabel,
+                ...textStyle,
+                color: currentTheme.tertiaryColor
+            } }>
+                { name }
+            </AppText>
             <TextInput
-                style={ styles.input }
-                color={ currentTheme.iconColor }
+                style={ { ...styles.input, borderColor: currentTheme.borderColor } }
+                color={ currentTheme.borderColor }
                 { ...otherProps }
             />
         </View>
